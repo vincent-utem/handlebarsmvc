@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27428.2005
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "handlebarsmvc", "handlebarsmvc\handlebarsmvc.csproj", "{C79FABAC-6784-4EA9-9D58-301CC8F4CFC8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandlebarsMvcEngine", "HandlebarsMvcEngine\HandlebarsMvcEngine.csproj", "{1B232FE9-5517-47C6-9219-16FF5B9CFD12}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{C79FABAC-6784-4EA9-9D58-301CC8F4CFC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C79FABAC-6784-4EA9-9D58-301CC8F4CFC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C79FABAC-6784-4EA9-9D58-301CC8F4CFC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B232FE9-5517-47C6-9219-16FF5B9CFD12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B232FE9-5517-47C6-9219-16FF5B9CFD12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B232FE9-5517-47C6-9219-16FF5B9CFD12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B232FE9-5517-47C6-9219-16FF5B9CFD12}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

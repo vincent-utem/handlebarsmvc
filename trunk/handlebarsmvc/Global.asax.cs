@@ -1,4 +1,5 @@
-﻿using System;
+﻿using handlebarsmvc.Models.HbTemplateEngine;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,6 +14,10 @@ namespace handlebarsmvc
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+            //注册自定义视图
+            ViewEngines.Engines.Clear();
+            ViewEngines.Engines.Add(new HbViewEngine());
         }
     }
 }
