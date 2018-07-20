@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <script apply="hbtpl" type="text/x-handlebars-template">
+        <title>{{title}}</title>
+    </script>
+    <script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <p>
+        <img src="images/logo.png" />
+    </p>
+    <script apply="hbtpl" type="text/x-handlebars-template">
+        <div>
+            <h1>{{title}}</h1>
+            <p>{{content}}</p>
+        </div>
+    </script>
+    
+</body>
+</html>
+
+<script type="text/javascript" src="/js/lib/handlebars/handlebars.min.js" apply="hbjs"></script>
+<script type="text/javascript" src="/js/hbController.js?20180705" apply="hbjs"></script>

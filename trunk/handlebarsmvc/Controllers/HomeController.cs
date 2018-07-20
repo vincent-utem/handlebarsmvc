@@ -13,11 +13,11 @@ namespace handlebarsmvc.Controllers
         {
             var data = new
             {
-                title = "Handlebars.Net-Demo",
+                title = "Handlebars.Net-Demo-ByCSharp",
                 content = "hello Handlebars.Net !!!"
             };
-
-            return View(data);
+            
+            return View("Index", data);
         }
     }
 }

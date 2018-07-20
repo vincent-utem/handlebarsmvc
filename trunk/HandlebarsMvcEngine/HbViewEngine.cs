@@ -22,9 +22,28 @@ namespace HandlebarsMvcEngine
         }
 
         // 自定义 View 路径格式
-        public HbViewEngine(HbFileSystem hdbfs) : this(hdbfs, new string[] { "~/HbViews/{1}/{0}.hbhtml", "~/HbViews/Shared/{0}.hbhtml" })
-        {
+        // public HbViewEngine(HbFileSystem hdbfs) : this(hdbfs, new string[] { "~/wwwtpl/views/{1}/{0}.hbhtml", "~/wwwtpl/views/Shared/{0}.hbhtml" })
+        //{
 
+        //}
+
+        public HbViewEngine(HbFileSystem hdbfs)
+        {
+            this.HdbFileSystem = hdbfs;
+            base.ViewLocationFormats = getViewLocations();
+        }
+
+        //返回所有视图所在的目录，约定：视图存放在静态目录下
+        private string[] getViewLocations()
+        {
+            string[] vls = new string[HdbFileSystem.StaticPath.Count];
+            int i = 0;
+            foreach (var sp in HdbFileSystem.StaticPath)
+            {
+                vls[i] = "~/" + sp.Key + "/{0}.hbhtml";
+                i++;
+            }
+            return vls;
         }
 
         protected override IView CreatePartialView(ControllerContext controllerContext, string partialPath)

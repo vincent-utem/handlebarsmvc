@@ -47,6 +47,9 @@
     <Reference Include="Handlebars, Version=1.9.5.0, Culture=neutral, PublicKeyToken=22225d0bf33cd661, processorArchitecture=MSIL">
       <HintPath>..\packages\Handlebars.Net.1.9.5\lib\net452\Handlebars.dll</HintPath>
     </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.8.5.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.8.5\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.DynamicData" />
@@ -89,15 +92,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="Scripts\handlebars.amd.js" />
-    <Content Include="Scripts\handlebars.amd.min.js" />
-    <Content Include="Scripts\handlebars.js" />
-    <Content Include="Scripts\handlebars.min.js" />
-    <Content Include="Scripts\handlebars.runtime.amd.js" />
-    <Content Include="Scripts\handlebars.runtime.amd.min.js" />
-    <Content Include="Scripts\handlebars.runtime.js" />
-    <Content Include="Scripts\handlebars.runtime.min.js" />
     <Content Include="Web.config" />
+    <Content Include="wwwtpl\images\logo.png" />
+    <Content Include="wwwtpl\js\hbController.js" />
+    <Content Include="wwwtpl\js\lib\handlebars\handlebars.amd.js" />
+    <Content Include="wwwtpl\js\lib\handlebars\handlebars.amd.min.js" />
+    <Content Include="wwwtpl\js\lib\handlebars\handlebars.js" />
+    <Content Include="wwwtpl\js\lib\handlebars\handlebars.min.js" />
+    <Content Include="wwwtpl\js\lib\handlebars\handlebars.runtime.amd.js" />
+    <Content Include="wwwtpl\js\lib\handlebars\handlebars.runtime.amd.min.js" />
+    <Content Include="wwwtpl\js\lib\handlebars\handlebars.runtime.js" />
+    <Content Include="wwwtpl\js\lib\handlebars\handlebars.runtime.min.js" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -111,7 +116,6 @@
     <Content Include="Views\web.config" />
     <Content Include="App_Readme\Handlebarsjs_README.md" />
     <Content Include="App_Readme\Handlebarsjs_LICENSE" />
-    <Content Include="HbViews\Home\Index.hbhtml" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -119,11 +123,15 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="wwwtpl\js\lib\jquery-3.3.1.min.js" />
+    <Content Include="wwwtpl\Index.hbhtml" />
+    <Content Include="wwwtpl\js\json\Index.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="Views\Home\" />
+    <Folder Include="wwwtpl\style\imgs\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HandlebarsMvcEngine\HandlebarsMvcEngine.csproj">
