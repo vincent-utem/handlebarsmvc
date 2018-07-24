@@ -81,6 +81,7 @@ namespace HandlebarsMvcEngine
 
             return childrenPaths;
         }
+
         #endregion
 
 
@@ -105,10 +106,7 @@ namespace HandlebarsMvcEngine
             if (!FileExists(filePath))
             {
                 string tpl = File.ReadAllText(CombinePath(_viewPhysicalPath, Sanitise(filePath)));
-                if (Regex.IsMatch(tpl, "<script[^>]+apply=\"hbjs\"[^>]{0,}></script>\r\n", RegexOptions.IgnoreCase))
-                {
-                    tpl = Regex.Replace(tpl, "<script[^>]+apply=\"hbjs\"[^>]{0,}></script>\r\n", "", RegexOptions.IgnoreCase);
-                }
+
                 Add(filePath, tpl);
             }
 

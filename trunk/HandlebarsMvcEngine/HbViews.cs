@@ -67,13 +67,12 @@ namespace HandlebarsMvcEngine
             // ---------------------------------------------- 分隔线 ------------------------------------------------------- //
 
 
-            //加载视图模板HTML文档
+            //1、加载视图模板HTML文档
             HtmlDocument htmldoc = new HtmlDocument();
             htmldoc.LoadHtml(_viewTemplateContent);
 
-            //取出模板中所有<script apply="hbtpl" type="text/x-handlebars-template">节点
+            //2、取出模板中所有<script apply="hbtpl" type="text/x-handlebars-template">节点
             List<HtmlNode> scriptNodes = htmldoc.DocumentNode.SelectNodes("//script[@apply='hbtpl']").ToList();
-
             //将这些节点绑定数据，并替换视图模板HTML文档中对应的模板节点
             foreach (HtmlNode sn in scriptNodes)
             {
@@ -81,15 +80,15 @@ namespace HandlebarsMvcEngine
                 sn.ParentNode.ReplaceChild(HtmlNode.CreateNode(tpl(viewContext.ViewData.Model)), sn);
             }
 
-            //取出模板中所有<script apply="hbjs" type="text/javascript">节点
+            //3、取出模板中所有<script apply="hbjs" type="text/javascript">节点
             scriptNodes = htmldoc.DocumentNode.SelectNodes("//script[@apply='hbjs']").ToList();
             //删除这些节点
             foreach (HtmlNode sn in scriptNodes)
             {
                 sn.Remove();
-            }
+            }            
 
-            //输出绑定数据后的视图文档
+            //4、输出绑定数据后的视图文档
             writer.Write(htmldoc.DocumentNode.OuterHtml);
 
             
