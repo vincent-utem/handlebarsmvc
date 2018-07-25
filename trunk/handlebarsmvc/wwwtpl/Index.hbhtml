@@ -11,13 +11,66 @@
     <p>
         <img src="/wwwtpl/images/logo.png" />
     </p>
+    <h1>基础模板</h1>
     <script apply="hbtpl" type="text/x-handlebars-template">
         <div>
-            <h1>{{title}}</h1>
+            <h3>{{title}}</h3>
             <p>{{content}}</p>
         </div>
     </script>
-    
+
+    <h1>if else</h1>
+    <script apply="hbtpl" type="text/x-handlebars-template">
+        <div>
+            {{#if author}}
+            <h3>{{author.firstName}}.{{author.lastName}}</h3>
+            {{else}}
+            <h3>Unknown Author</h3>
+            {{/if}}
+        </div>
+    </script>
+
+    <h1>unless</h1>
+    <script apply="hbtpl" type="text/x-handlebars-template">
+        <div>
+            {{#unless license}}
+            <h3 class="warning">WARNING: This entry does not have a license!</h3>
+            {{else}}
+            <h3>{{license}}</h3>
+            {{/unless}}
+        </div>
+    </script>
+
+    <h1>each</h1>
+    <script apply="hbtpl" type="text/x-handlebars-template">
+        <div>
+            {{#each passage}}
+            {{#each paragraphs}}
+            {{@../index}}:{{@index}}:{{this}}</p>
+            {{else}}
+            <p class="empty">No content</p>
+            {{/each}}
+            {{/each}}
+        </div>
+    </script>
+    <script apply="hbtpl" type="text/x-handlebars-template">
+        <div>
+            {{#each author}}
+            {{@key}}: {{this}}
+            {{/each}}
+        </div>
+    </script>
+
+    <h1>with</h1>
+    <script apply="hbtpl" type="text/x-handlebars-template">
+        <div>
+            {{#with author}}
+            <h2>By {{author.firstName}} {{author.lastName}}</h2>
+            {{else}}
+            <p class="empty">No content</p>
+            {{/with}}
+        </div>
+    </script>
 </body>
 </html>
 

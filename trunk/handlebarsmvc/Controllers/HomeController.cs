@@ -6,17 +6,14 @@ using System.Web.Mvc;
 
 namespace handlebarsmvc.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         // GET: Home
         public ActionResult Index()
         {
-            var data = new
-            {
-                title = "Handlebars.Net-Demo-ByCSharp",
-                content = "hello Handlebars.Net !!!"
-            };
-            
+            dynamic data = HandlebarsFileSystem.GetDataContent("Index");
+            data["title"] = "Handlebars.Net-Demo-ByCSharp";
+
             return View("Index", data);
         }
     }

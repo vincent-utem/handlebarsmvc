@@ -1,4 +1,17 @@
 ﻿{
   "title": "Handlebars.Net-Demo-ByJson",
-  "content": "hello Handlebars.Net !!!"
+  "content": "hello Handlebars.Net !!!",
+  "author": {
+    "firstName": "vincent",
+    "lastName": "utem"
+  },
+  "license": "fxeye-license",
+  "passage": [
+    { "paragraphs": [ "aaa", "bbb", "ccc" ] },
+    { "paragraphs": [] }
+  ],
+  "datas": [
+    { "adp": "adp1" },
+    { "adp": "adp2" }
+  ]
 }

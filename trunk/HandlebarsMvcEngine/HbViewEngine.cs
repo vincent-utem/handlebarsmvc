@@ -55,5 +55,10 @@ namespace HandlebarsMvcEngine
         {
             return new HbView(this.HdbFileSystem.GetFileContent(viewPath));
         }
+
+        protected override bool FileExists(ControllerContext controllerContext, string virtualPath)
+        {
+            return base.FileExists(controllerContext, virtualPath);
+        }
     }
 }
