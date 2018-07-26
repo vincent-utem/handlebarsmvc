@@ -144,14 +144,14 @@ namespace HandlebarsMvcEngine
                 string tpl = File.ReadAllText(CombinePath(_viewPhysicalPath, sanitise(filePath)));
                 string datatpl = File.ReadAllText(CombinePath(_viewPhysicalPath, coverDataPath(filePath)));
 
-                //自定义DynamicJsonConverter方法，转换datatpl为dynamic类型
-                var serializer = new JavaScriptSerializer();
-                serializer.RegisterConverters(new[] { new DynamicJsonConverter() });
-                Add(filePath, tpl, serializer.Deserialize<object>(datatpl));
+                ////自定义DynamicJsonConverter方法，转换datatpl为dynamic类型
+                //var serializer = new JavaScriptSerializer();
+                //serializer.RegisterConverters(new[] { new DynamicJsonConverter() });
+                //Add(filePath, tpl, serializer.Deserialize<object>(datatpl));
 
-                ////原生方法，转换datatpl为dynamic类型
-                //JavaScriptSerializer jss = new JavaScriptSerializer();
-                //Add(filePath, tpl, jss.Deserialize<dynamic>(datatpl));
+                //原生方法，转换datatpl为dynamic类型
+                JavaScriptSerializer jss = new JavaScriptSerializer();
+                Add(filePath, tpl, jss.Deserialize<dynamic>(datatpl));
             }
 
             return templateDictionary[filePath];
