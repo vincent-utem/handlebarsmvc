@@ -10,6 +10,7 @@ namespace handlebarsmvc
 {
     public class MvcApplication : System.Web.HttpApplication
     {
+        //定义HandlebarsMVC文件系统全局变量
         public static HbFileSystem HandlebarsFileSystem = new HbFileSystem(System.AppDomain.CurrentDomain.BaseDirectory);
 
         protected void Application_Start()

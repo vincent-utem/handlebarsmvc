@@ -11,10 +11,12 @@ namespace handlebarsmvc.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            dynamic data = HandlebarsFileSystem.GetDataContent("Index");
-            data["title"] = "Handlebars.Net-Demo-ByCSharp";
+            //获取数据模板
+            dynamic datatemplate = HandlebarsFileSystem.GetDataContent("Index");
+            //修改数据模板中的属性值
+            datatemplate["title"] = "Handlebars.Net-Demo-ByCSharp";
 
-            return View("Index", data);
+            return View("Index", datatemplate);
         }
     }
 }
